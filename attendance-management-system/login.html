@@ -1,0 +1,81 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in • AttendX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-wrap">
+
+  <aside class="auth-aside">
+    <a class="brand light" href="index.html">
+      <span class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </span>
+      <span>Attend<strong>X</strong></span>
+    </a>
+    <div class="auth-aside-body">
+      <h1>Welcome back 👋</h1>
+      <p>Sign in to mark attendance, monitor classes and generate reports in real time.</p>
+      <ul class="auth-points">
+        <li>✔ Realtime cloud sync</li>
+        <li>✔ Secure role-based access</li>
+        <li>✔ Exportable reports</li>
+      </ul>
+    </div>
+    <p class="auth-aside-foot">© <span id="year"></span> AttendX</p>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <header>
+        <h2>Sign in</h2>
+        <p>Enter your credentials to continue</p>
+      </header>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@school.edu" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+            <button type="button" class="input-affix" data-toggle-password="#password">Show</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox"><input type="checkbox" id="remember" checked> <span>Remember me</span></label>
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+
+        <div class="alert error hidden" id="loginError"></div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginBtn">
+          <span class="btn-label">Sign in</span>
+        </button>
+      </form>
+
+      <p class="auth-switch">Don't have an account? <a href="register.html" class="link">Create one</a></p>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

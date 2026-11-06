@@ -1,0 +1,119 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AttendX — Smart Attendance Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="landing">
+
+<header class="landing-nav">
+  <a class="brand" href="index.html">
+    <span class="brand-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    </span>
+    <span>Attend<strong>X</strong></span>
+  </a>
+  <nav class="landing-links">
+    <a href="#features">Features</a>
+    <a href="#roles">Roles</a>
+    <a href="#how">How it works</a>
+  </nav>
+  <div class="landing-actions">
+    <button class="btn btn-ghost btn-sm" data-theme-toggle title="Toggle theme">🌙</button>
+    <a href="login.html" class="btn btn-ghost">Sign in</a>
+    <a href="register.html" class="btn btn-primary">Get started</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="pill">✨ Attendance, reimagined</span>
+    <h1>Track attendance in <span class="grad">seconds</span>, not semesters.</h1>
+    <p>
+      AttendX gives admins, teachers, officers and students one beautiful dashboard
+      to mark, monitor and report attendance — powered by realtime cloud sync.
+    </p>
+    <div class="hero-cta">
+      <a href="register.html" class="btn btn-primary btn-lg">Create free account</a>
+      <a href="login.html" class="btn btn-outline btn-lg">I already have one</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>99.9%</strong><span>Uptime</span></div>
+      <div><strong>&lt;2s</strong><span>Check-in</span></div>
+      <div><strong>4</strong><span>Role dashboards</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="glass-card float-a">
+      <div class="gc-head"><span class="dot green"></span> Attendance live</div>
+      <div class="gc-bar"><i style="width:92%"></i></div>
+      <small>CS-301 · 92% present today</small>
+    </div>
+    <div class="glass-card float-b">
+      <div class="gc-head"><span class="dot violet"></span> Session code</div>
+      <div class="code-box">A7K2Q9</div>
+      <small>Students check in instantly</small>
+    </div>
+    <div class="glass-card float-c">
+      <div class="gc-head">👥 128 students</div>
+      <div class="avatars">
+        <span>AM</span><span>KD</span><span>JO</span><span>+</span>
+      </div>
+      <small>All marked present</small>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <h2 class="section-title">Everything you need</h2>
+  <p class="section-sub">Built for real classrooms and real institutions.</p>
+  <div class="feature-grid">
+    <article class="feature"><div class="f-icon">⚡</div><h3>Instant check-in</h3><p>Teachers open a session and share a 6-character code. Students check in from any device.</p></article>
+    <article class="feature"><div class="f-icon">📊</div><h3>Live reports</h3><p>Filter by course, student or date range. Export any report to CSV in one click.</p></article>
+    <article class="feature"><div class="f-icon">🔐</div><h3>Role-based access</h3><p>Row-level security in the database means every role sees exactly what it should.</p></article>
+    <article class="feature"><div class="f-icon">📱</div><h3>Fully responsive</h3><p>Designed mobile-first so students can mark attendance from the back of the hall.</p></article>
+    <article class="feature"><div class="f-icon">🧾</div><h3>Audit trail</h3><p>Every record stores who marked it and when — perfect for verification.</p></article>
+    <article class="feature"><div class="f-icon">🌙</div><h3>Dark mode</h3><p>A gorgeous light theme by day and a comfortable dark theme by night.</p></article>
+  </div>
+</section>
+
+<section id="roles" class="section">
+  <h2 class="section-title">One system, four perspectives</h2>
+  <div class="role-grid">
+    <div class="role-card"><span class="role-emoji">🛡️</span><h3>Admin</h3><p>Manage users, courses, enrollments and institution-wide analytics.</p></div>
+    <div class="role-card"><span class="role-emoji">👨‍🏫</span><h3>Teacher</h3><p>Create sessions, generate codes, and mark or edit student attendance.</p></div>
+    <div class="role-card"><span class="role-emoji">🎓</span><h3>Student</h3><p>Check in with a code and track your own attendance percentage.</p></div>
+    <div class="role-card"><span class="role-emoji">🗂️</span><h3>Officer</h3><p>Oversee departments, verify records and produce official reports.</p></div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <div class="step"><span>1</span><h3>Create an account</h3><p>Sign up with your institutional email and pick your role.</p></div>
+    <div class="step"><span>2</span><h3>Join a course</h3><p>Admins enroll students into courses; teachers are assigned automatically.</p></div>
+    <div class="step"><span>3</span><h3>Open a session</h3><p>The teacher starts a session and shares the generated code.</p></div>
+    <div class="step"><span>4</span><h3>Check in & report</h3><p>Students check in. Reports update in realtime and export to CSV.</p></div>
+  </div>
+</section>
+
+<footer class="landing-footer">
+  <p>© <span id="year"></span> AttendX — Attendance Management System.</p>
+</footer>
+
+<script src="js/supabase.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

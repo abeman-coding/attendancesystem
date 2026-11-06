@@ -1,0 +1,126 @@
+<!-- students.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Students • AttendX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="students">
+
+<div class="app">
+  <div class="sidebar-backdrop" data-sidebar-close></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </span>
+      <span>Attend<strong>X</strong></span>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar-footer">
+      <button class="btn btn-ghost btn-block" data-logout>Sign out</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" data-sidebar-open aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <h1 id="pageTitle">Students</h1>
+      <div class="topbar-actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">🌙</button>
+        <div class="user-chip">
+          <span class="avatar" data-user-initials>--</span>
+          <span class="user-meta">
+            <strong data-user-name>—</strong>
+            <small data-user-role>—</small>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="page-head">
+        <div>
+          <h2>Students</h2>
+          <p>All registered students in the institution.</p>
+        </div>
+        <button class="btn btn-primary" id="addStudentBtn">+ Add student</button>
+      </section>
+
+      <section class="card">
+        <div class="card-body filters">
+          <div class="field">
+            <label for="searchStudents">Search</label>
+            <input id="searchStudents" type="search" placeholder="Name, email or matric no…" />
+          </div>
+          <div class="field">
+            <label for="filterDept">Department</label>
+            <select id="filterDept"><option value="">All departments</option></select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h3>Student list</h3><small id="studentCount" class="muted"></small></div>
+        <div class="card-body" id="studentTable">
+          <div class="skeleton-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="studentModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="studentModalTitle">Add student</h3>
+      <button class="icon-btn" data-modal-close>✕</button>
+    </div>
+    <form id="studentForm" class="modal-body">
+      <input type="hidden" id="studentId" />
+      <div class="field">
+        <label for="sName">Full name</label>
+        <input id="sName" required placeholder="Ada Lovelace" />
+      </div>
+      <div class="field">
+        <label for="sEmail">Email</label>
+        <input id="sEmail" type="email" required placeholder="ada@school.edu" />
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label for="sMatric">Matric no</label>
+          <input id="sMatric" placeholder="CS/2024/001" />
+        </div>
+        <div class="field">
+          <label for="sDept">Department</label>
+          <input id="sDept" placeholder="Computer Science" />
+        </div>
+      </div>
+      <div class="alert error hidden" id="studentFormError"></div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- reports.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reports • AttendX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="reports">
+
+<div class="app">
+  <div class="sidebar-backdrop" data-sidebar-close></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </span>
+      <span>Attend<strong>X</strong></span>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar-footer">
+      <button class="btn btn-ghost btn-block" data-logout>Sign out</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" data-sidebar-open aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <h1 id="pageTitle">Reports</h1>
+      <div class="topbar-actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">🌙</button>
+        <div class="user-chip">
+          <span class="avatar" data-user-initials>--</span>
+          <span class="user-meta">
+            <strong data-user-name>—</strong>
+            <small data-user-role>—</small>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="page-head">
+        <div>
+          <h2>Attendance reports</h2>
+          <p>Filter, analyse and export attendance data.</p>
+        </div>
+        <button class="btn btn-outline" id="exportBtn">⬇ Export CSV</button>
+      </section>
+
+      <section class="card">
+        <div class="card-body filters">
+          <div class="field">
+            <label for="filterCourse">Course</label>
+            <select id="filterCourse"><option value="">All courses</option></select>
+          </div>
+          <div class="field">
+            <label for="filterFrom">From</label>
+            <input id="filterFrom" type="date" />
+          </div>
+          <div class="field">
+            <label for="filterTo">To</label>
+            <input id="filterTo" type="date" />
+          </div>
+          <div class="field">
+            <label for="filterStatus">Status</label>
+            <select id="filterStatus">
+              <option value="">All</option>
+              <option value="present">Present</option>
+              <option value="late">Late</option>
+              <option value="absent">Absent</option>
+              <option value="excused">Excused</option>
+            </select>
+          </div>
+          <div class="field field-action">
+            <button class="btn btn-primary" id="applyFilters">Apply</button>
+            <button class="btn btn-ghost" id="resetFilters">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" id="reportStats"></section>
+
+      <section class="card">
+        <div class="card-head"><h3>Detailed records</h3><small id="recordCount" class="muted"></small></div>
+        <div class="card-body" id="reportTable">
+          <div class="skeleton-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
